@@ -1,0 +1,362 @@
+/* External font */
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('./fonts/roboto-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('./fonts/roboto-variablefont_wdthwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*::before,
+*::after,
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "robotoregular";
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.left-container{
+    background-color: rgb(243, 240, 240);
+    padding: 1rem;
+}
+
+.avatar-container{
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+.cat-avatar{
+    border-radius: 50%;
+}
+
+.projects-header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+    justify-content: space-between;
+}
+
+.left-header, .right-header{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-project{
+    margin-top: 0.3rem;
+    border-radius: 50%;
+    width: 2rem;
+    font-size: 1.2rem;
+}
+
+.add-project:hover, .add-task:hover{
+    border: solid white;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.new-project{
+    padding: 1.5rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.add-project, .add-task{
+    font-weight: 900;
+    border: solid black;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.project-dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.new-project input[type="text"]{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: #000000 solid 2px;
+    font-weight: 900;
+    width: 15rem;
+}
+
+.project input[type="text"]{
+    font-size: 1.2rem;
+    padding-left: 0.3rem;
+    border-radius: 0.5rem;
+    background-color: rgb(243, 240, 240);
+    border: none;
+    outline: none;
+    width: 9rem;
+}
+
+.project:hover input[type="text"]{
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
+.form-btns{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.project-cancel, .project-submit, .todo-cancel, .todo-submit{
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.projects-header::before{
+    content: '';
+    position: absolute;
+    background: rgb(0, 0, 0);
+    border-radius: 1rem;
+    width: 100%;
+    height: 3px;
+    bottom: -7px;
+    left: 0;
+}
+
+.projects-content{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.project{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1rem;
+}
+
+.project:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding-left: 0.7rem;
+    padding-right: 0.3rem;
+    border-radius: 1rem;
+}
+
+.btns-container, .edit-btns{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.project-text, .delete-project, .edit-project, .save-edit, .cancel-edit, .delete-todo{
+    cursor: pointer;
+}
+
+.delete-project, .edit-project, .save-edit, .cancel-edit{
+    background-size: cover;
+    background: none;
+    width: 19px;
+    height: 19px;
+    border: none;
+}
+
+.project:hover .delete-project, .project:hover .edit-project, .project:hover .save-edit, .project:hover .cancel-edit{ 
+    fill: white;
+}
+
+.right-container{
+    display: grid; 
+    grid-template-rows: 1fr 8fr; 
+    padding: 0 2rem;
+}
+
+.placeholder-div{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 80vh;
+    margin: auto;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.right-top{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    padding: 0 0 0.8rem 0;
+}
+
+.top-container{
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.top-container::before{
+    content: '';
+    position: absolute;
+    background: rgb(0, 0, 0);
+    border-radius: 1rem;
+    width: 100%;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+}
+
+.add-task{
+    width: 5.5rem;
+    border-radius: 2rem;
+}
+
+.right-bottom{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-radio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgb(214, 214, 214);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.checkmark{
+    display: inline-block;
+    background-color: rgb(214, 214, 214);
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.custom-radio input{
+    display: none;
+}
+
+.custom-radio input:checked + .checkmark{
+    opacity: 1;
+}
+
+.todo-card{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    background-color: rgb(243, 240, 240);
+    color: black;
+    padding: 0.2rem 0.3rem 0 1.2rem;
+    border-radius: 0.5rem;
+    min-height: 105px;
+    flex-grow: 1;
+}
+
+.todo-card::before{
+    content: "";
+    background-color: rgb(243, 240, 240);
+    border: none;
+    border-radius: 9px 0 0 9px;
+    position: absolute;
+    height: 100%;
+    width: 8px;
+    top: 0;
+    left: 0;
+}
+
+.priority-high::before{
+    background-color: red;
+}
+
+.priority-medium::before{
+    background-color: rgb(245, 245, 8);
+}
+
+.priority-low::before{
+    background-color: rgb(10, 207, 10);
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 0.2rem;
+}
+
+.delete-todo{
+    background-size: cover;
+    background: none;
+    width: 15px;
+    height: 15px;
+    border: none;
+    fill: black;
+}
+
+.todo-dialog{
+    padding: 1.5rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.todo-dialog input, .todo-dialog textarea, .todo-dialog select{
+    border-radius: 0.4rem;
+    border: 1px solid rgb(201, 201, 201);
+    padding: 0.5rem;
+    background-color: white;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#todo-form :first-child{
+    margin-top: 0.5rem;
+}
+
+#todo-form :last-child{
+    margin-bottom: 0.5rem;
+}
