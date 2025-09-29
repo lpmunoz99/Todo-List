@@ -14,7 +14,15 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              url: true, // makes sure url() inside CSS is handled
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
