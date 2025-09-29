@@ -19,7 +19,7 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              url: true, // makes sure url() inside CSS is handled
+              url: true,
             },
           },
         ],
