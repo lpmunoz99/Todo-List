@@ -19,13 +19,13 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              url: true,
+              url: true, 
             },
           },
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(woff2?|eot|ttf|otf)$/i, 
         type: "asset/resource",
       },
       {
